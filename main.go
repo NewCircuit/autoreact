@@ -1,20 +1,12 @@
 package main
 
 import (
-	. "github.com/Floor-Gang/suggestions/internal"
-	"os"
-	"os/signal"
-	"syscall"
+	internal "github.com/Floor-Gang/suggestions/internal"
+	util "github.com/Floor-Gang/utilpkg"
 )
 
 func main() {
-	config := GetConfig("./config.yml")
-	Start(config)
-	keepAlive()
-}
-
-func keepAlive() {
-	sc := make(chan os.Signal, 1)
-	signal.Notify(sc, syscall.SIGINT, syscall.SIGTERM, os.Interrupt)
-	<-sc
+	config := internal.GetConfig("./config.yml")
+	internal.Start(config)
+	util.KeepAlive()
 }
