@@ -40,7 +40,7 @@ func (bot *Bot) onReady(_ *dg.Session, ready *dg.Ready) {
 
 func (bot *Bot) onMessage(_ *dg.Session, message *dg.MessageCreate) {
 	// Check if this is the channel that is defined in the config.yml
-	if message.ChannelID == bot.config.ChannelID {
+	if bot.isChannel(message.ChannelID) {
 		// Add each emoij set in the config file to the send message
 		for _, reaction := range bot.config.Reactions {
 			err := bot.client.MessageReactionAdd(
@@ -56,4 +56,13 @@ func (bot *Bot) onMessage(_ *dg.Session, message *dg.MessageCreate) {
 			}
 		}
 	}
+}
+
+func (bot *Bot) isChannel(channelID string) bool {
+	for _, id := range bot.config.Channels {
+		if id == channelID {
+			return true
+		}
+	}
+	return false
 }
