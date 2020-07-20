@@ -30,7 +30,7 @@ func (bot *Bot) cmdList(msg *dg.Message) {
 
 	for _, channelID := range bot.config.Channels {
 		if channel, err := bot.client.Channel(channelID); err == nil {
-			channels += " - " + channel.Name + "\n"
+			channels += " - " + channel.Mention() + "\n"
 		} else {
 			channels += fmt.Sprintf(" - Unknown (`%s`)\n", channelID)
 		}
