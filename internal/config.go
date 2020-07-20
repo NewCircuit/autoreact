@@ -1,32 +1,38 @@
 package internal
 
 import (
-	util "github.com/Floor-Gang/utilpkg"
+	util "github.com/Floor-Gang/utilpkg/config"
 	"log"
-	"strings"
 )
 
 // Define what content is in config.yml
 type Config struct {
-	Token     string   `yaml:"token"`
+	Auth      string   `yaml:"auth_server"`
 	Channels  []string `yaml:"channels"`
 	Reactions []string `yaml:"reactions"`
+	Prefix    string   `yaml:"prefix"`
 }
 
-func GetConfig(configPath string) Config {
+const configPath = "./config.yml"
+
+func GetConfig() Config {
 	config := Config{
-		Token:     "",
+		Auth:      "",
 		Channels:  []string{"1", "2", "3"},
 		Reactions: []string{"1", "2", "3"},
+		Prefix:    ".react",
 	}
 	err := util.GetConfig(configPath, &config)
 
 	if err != nil {
-		if strings.Contains(err.Error(), "default") {
-			log.Fatalln("A default configuration has been made")
-		} else {
-			log.Fatalln("Failed to get config\n" + err.Error())
-		}
+		log.Fatalln(err)
 	}
 	return config
+}
+
+func (config *Config) Save() {
+	err := util.Save(configPath, config)
+	if err != nil {
+		log.Fatalln("Failed to save config", err)
+	}
 }
