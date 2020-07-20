@@ -17,6 +17,10 @@ func (bot *Bot) onMessage(_ *dg.Session, msg *dg.MessageCreate) {
 		return
 	}
 
+	if msg.Author.Bot || !strings.HasPrefix(msg.Content, bot.config.Prefix) {
+		return
+	}
+
 	args := strings.Fields(msg.Content)
 
 	if len(args) < 2 {
