@@ -3,8 +3,9 @@ This is Floor Gang bot, it auto-reacts with emojis in a given channel.
 
 ## Usage
 ```
+$ cd ./cmd/autoreact
 $ go build
-$ ./suggestions 
+$ ./autoreact
 $ ... edit config.yml ...
-$ ./suggestions
+$ ./autoreact
 ```
