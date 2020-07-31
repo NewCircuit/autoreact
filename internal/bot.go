@@ -49,7 +49,7 @@ func Start() {
 		log.Fatalln("Failed to register", err)
 	}
 
-	client, _ := dg.New(config.Token)
+	client, _ := dg.New("Bot " + config.Token)
 
 	bot := Bot{
 		Auth:   &authClient,
