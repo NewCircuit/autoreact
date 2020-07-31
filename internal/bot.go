@@ -20,7 +20,7 @@ func Start() {
 		log.Fatalln("Failed to connect to auth server", err)
 	}
 
-	register, err := authClient.Register(
+	_, err = authClient.Register(
 		auth.Feature{
 			Name:        "Auto Reactions",
 			Description: "Auto react to any given text-channel",
@@ -49,7 +49,7 @@ func Start() {
 		log.Fatalln("Failed to register", err)
 	}
 
-	client, _ := dg.New(register.Token)
+	client, _ := dg.New(config.Token)
 
 	bot := Bot{
 		Auth:   &authClient,

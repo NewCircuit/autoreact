@@ -9,18 +9,18 @@ import (
 // args = [prefix, add, #channel]
 func (bot *Bot) cmdAdd(msg *dg.Message, args []string) {
 	if len(args) < 3 {
-		util.Reply(bot.client, msg, bot.config.Prefix+" add #channel")
+		_, _ = util.Reply(bot.client, msg, bot.config.Prefix+" add #channel")
 		return
 	}
 	channelID := util.FilterTag(args[2])
 	channel, err := bot.client.Channel(channelID)
 
 	if err != nil {
-		util.Reply(bot.client, msg, channelID+" isn't a valid channel.")
+		_, _ = util.Reply(bot.client, msg, channelID+" isn't a valid channel.")
 		return
 	}
 
-	util.Reply(bot.client, msg, "Added.")
+	_, _ = util.Reply(bot.client, msg, "Added.")
 	bot.config.Channels = append(bot.config.Channels, channel.ID)
 	bot.config.Save()
 }
@@ -36,20 +36,20 @@ func (bot *Bot) cmdList(msg *dg.Message) {
 		}
 	}
 
-	util.Reply(bot.client, msg, channels)
+	_, _ = util.Reply(bot.client, msg, channels)
 }
 
 // args = [prefix, remove, #channel]
 func (bot *Bot) cmdRemove(msg *dg.Message, args []string) {
 	if len(args) < 3 {
-		util.Reply(bot.client, msg, bot.config.Prefix+" remove #channel")
+		_, _ = util.Reply(bot.client, msg, bot.config.Prefix+" remove #channel")
 		return
 	}
 	channelID := util.FilterTag(args[2])
 	channel, err := bot.client.Channel(channelID)
 
 	if err != nil {
-		util.Reply(bot.client, msg, channelID+" isn't a valid channel.")
+		_, _ = util.Reply(bot.client, msg, channelID+" isn't a valid channel.")
 		return
 	}
 
@@ -59,6 +59,6 @@ func (bot *Bot) cmdRemove(msg *dg.Message, args []string) {
 			bot.config.Channels = bot.config.Channels[:len(bot.config.Channels)-1]
 		}
 	}
-	util.Reply(bot.client, msg, "Removed.")
+	_, _ = util.Reply(bot.client, msg, "Removed.")
 	bot.config.Save()
 }
