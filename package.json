@@ -4,7 +4,7 @@
   "description": "This is Floor Gang bot, it auto-reacts with emojis in a given channel.",
   "main": "index.js",
   "scripts": {
-    "test": "tsc && node ./builds/bot.js"
+    "start": "tsc && node ./builds/bot.js"
   },
   "repository": {
     "type": "git",
