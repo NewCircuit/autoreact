@@ -1,6 +1,5 @@
-import { Message, TextChannel } from 'discord.js';
+import { TextChannel } from 'discord.js';
 import {Command,CommandoClient,CommandoMessage} from 'discord.js-commando';
-import { config } from 'process';
 import Config from '../config';
 import { CONFIG } from '../global';
 
@@ -21,7 +20,8 @@ export class Add extends Command{
                     prompt: 'please provide a channel',
                     type: 'text-channel'
                 }
-            ]
+            ],
+            userPermissions: ['MANAGE_CHANNELS']
         });
         
     }
