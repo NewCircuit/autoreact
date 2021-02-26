@@ -23,5 +23,12 @@
     "discord.js-commando": "^0.12.2",
     "js-yaml": "^4.0.0",
     "typescript": "^4.2.2"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.15.2",
+    "@typescript-eslint/parser": "^4.15.2",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
