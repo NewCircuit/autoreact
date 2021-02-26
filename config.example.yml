@@ -1,0 +1,10 @@
+token: ''
+prefix: .
+# the whitelist is managed by the bot do not touch
+whitelist:
+  - ''
+# Here's an example of a custom emoji ":name:emoji id"
+# ie. :pewDownvote:718677670342426646
+emojis:
+  - 👍
+  - 👎

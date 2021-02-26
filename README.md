@@ -2,9 +2,15 @@
 This bot auto-reacts to specific channels
 
 ## Requirements
- * [NodeJs](https://nodejs.org/)
+ * [NodeJS](https://nodejs.org/)
 
 ## Setup
+
+### Configure the Bot
+1. Copy `config.example.yml` and change the name to `config.yml`
+2. Fill out the `config.yml`
+
+### Run the Bot
 ```sh
 # install dependencies
 npm i
