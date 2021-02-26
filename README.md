@@ -1,10 +1,10 @@
-# Suggestions
-This is Floor Gang bot, it auto-reacts with emojis in a given channel.
+# Auto React
+This bot auto-reacts to specific channels
 
-# Requirements
+## Requirements
  * [NodeJs](https://nodejs.org/)
 
-# Setup
+## Setup
 ```sh
 # install dependencies
 npm i
@@ -12,10 +12,12 @@ npm i
 npm start
 ```
 
-# Examples
+## Examples
 How to add a channel:
 - .add #channelname
+
 How to remove a channel:
 - .remove #channelname
+
 How to autoreact the last 100 messages in a channel:
 - .react 
