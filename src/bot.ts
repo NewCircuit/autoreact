@@ -20,8 +20,12 @@ class Bot extends CommandoClient {
     await this.login(CONFIG.token);
   }
 
+  /**
+ * Message event handler
+ * @param {Message} msg
+ * @returns {Promise<void>
+ */
   public async onMessage(msg: Message) {
-    // to react to all commands
     if (CONFIG.whitelist.includes(msg.channel.id)) {
       const tasks = [];
       for (let i = 0; i < CONFIG.emojis.length; i += 1) {
