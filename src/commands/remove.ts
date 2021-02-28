@@ -4,7 +4,7 @@ import Config from '../config';
 import { CONFIG } from '../global';
 
 type Args={
-    channel:TextChannel
+    channel: TextChannel
 }
 
 export class Remove extends Command {
@@ -33,9 +33,9 @@ export class Remove extends Command {
       const filtered = CONFIG.whitelist.splice(i, 1);
       CONFIG.whitelist = filtered;
       Config.setConfig(CONFIG);
-      botmsg = await msg.reply(`The channel with ID: ${id} is removed.`);
+      botmsg = await msg.reply(`ID: ${id} has been removed form the whitelist.`);
     } else {
-      botmsg = await msg.reply(`The channel with ID: ${id} is not whitelisted.`);
+      botmsg = await msg.reply(`ID: ${id} is not whitelisted.`);
     }
 
     await botmsg.delete({ timeout: 5000 });
