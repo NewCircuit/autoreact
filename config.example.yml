@@ -1,3 +1,5 @@
+# Add the bot's token here, you can get that from
+# the Discord Developer Portal https://discord.com/developers/
 token: ''
 prefix: .
 # the whitelist is managed by the bot do not touch
