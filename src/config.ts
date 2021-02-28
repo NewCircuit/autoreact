@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as yaml from 'js-yaml';
 
+const configFilePath = './config.yml';
 export default class Config {
     public readonly token: string;
 
@@ -18,11 +19,11 @@ export default class Config {
     }
 
     public static getConfig(): Config {
-      const data = fs.readFileSync('./config.yml');
+      const data = fs.readFileSync(configFilePath);
       return yaml.load(data.toString()) as Config;
     }
 
     public static setConfig(data: Config) {
-      fs.writeFileSync('./config.yml', yaml.dump(data));
+      fs.writeFileSync(configFilePath, yaml.dump(data));
     }
 }
