@@ -10,7 +10,7 @@
     "type": "git",
     "url": "git+https://github.com/NewCircuit/autoreact.git"
   },
-  "author": "",
+  "author": "NewCircuit <https://github.com/NewCircuit>",
   "license": "gpl-3.0",
   "bugs": {
     "url": "https://github.com/NewCircuit/autoreact/issues"
