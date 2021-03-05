@@ -23,7 +23,7 @@ class Bot extends CommandoClient {
   /**
  * Message event handler
  * @param {Message} msg
- * @returns {Promise<void>
+ * @returns {Promise<void>}
  */
   public async onMessage(msg: Message) {
     if (CONFIG.whitelist.includes(msg.channel.id)) {

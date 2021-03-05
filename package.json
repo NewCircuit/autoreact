@@ -1,21 +1,21 @@
 {
   "name": "autoreact",
   "version": "1.0.0",
-  "description": "This is Floor Gang bot, it auto-reacts with emojis in a given channel.",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "tsc && node ./builds/bot.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Floor-Gang/autoreact.git"
+    "url": "git+https://github.com/NewCircuit/autoreact.git"
   },
   "author": "",
   "license": "gpl-3.0",
   "bugs": {
-    "url": "https://github.com/Floor-Gang/autoreact/issues"
+    "url": "https://github.com/NewCircuit/autoreact/issues"
   },
-  "homepage": "https://github.com/Floor-Gang/autoreact#readme",
+  "homepage": "https://github.com/NewCircuit/autoreact#readme",
   "dependencies": {
     "@types/js-yaml": "^4.0.0",
     "@types/node": "^14.14.31",
